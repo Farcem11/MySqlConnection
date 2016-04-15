@@ -35,4 +35,6 @@
 
     <string name="success_signUp">El nuevo perfil ha sido registrado exitosamente</string>
     <string name="success_logIn">Se ha iniciado sesión exitosamente</string>
+    <string name="error_loginInvalidEmail">El correo electrónico ingresado no se encuentra registrado</string>
+    <string name="error_loginInvalidPwd">La contraseña ingresada no es válida</string>
 </resources>

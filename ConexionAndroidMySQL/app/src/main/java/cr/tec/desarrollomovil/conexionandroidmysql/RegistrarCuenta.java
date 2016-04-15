@@ -1,20 +1,24 @@
 package cr.tec.desarrollomovil.conexionandroidmysql;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegistrarCuenta extends AppCompatActivity {
 
-  TextView firstName;
-  TextView lastName;
-  TextView userName;
-  TextView eMail;
-  TextView pwd;
-  TextView pwdAgain;
+
+  // Variables para los campos de texto del layout
+  EditText firstName;
+  EditText lastName;
+  EditText userName;
+  EditText eMail;
+  EditText pwd;
+  EditText pwdAgain;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +29,13 @@ public class RegistrarCuenta extends AppCompatActivity {
 
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-    firstName = (TextView) findViewById(R.id.signUp_firstName);
-    lastName = (TextView) findViewById(R.id.signUp_lastName);
-    userName = (TextView) findViewById(R.id.signUp_userName);
-    eMail = (TextView) findViewById(R.id.signUp_eMail);
-    pwd = (TextView) findViewById(R.id.signUp_pwd);
-    pwdAgain = (TextView) findViewById(R.id.signUp_pwdAgain);
+    // Asigna los TextView
+    firstName = (EditText) findViewById(R.id.signUp_firstName);
+    lastName = (EditText) findViewById(R.id.signUp_lastName);
+    userName = (EditText) findViewById(R.id.signUp_userName);
+    eMail = (EditText) findViewById(R.id.signUp_eMail);
+    pwd = (EditText) findViewById(R.id.signUp_pwd);
+    pwdAgain = (EditText) findViewById(R.id.signUp_pwdAgain);
   }
 
 
@@ -71,6 +76,16 @@ public class RegistrarCuenta extends AppCompatActivity {
       Toast.makeText(this, R.string.error_pwdsMismatch, Toast.LENGTH_LONG).show();
       return;
     }
-    // TODO Enviar datos a BD
+    else{
+      // TODO Enviar datos a BD
+
+      // Toast notificando que la cuenta fue creada exitosamente
+      Toast.makeText(this, R.string.success_signUp, Toast.LENGTH_LONG).show();
+
+      // Finalizar esta Activity
+      Intent intent = new Intent(this, MainActivity.class);
+      startActivity(intent);
+      this.finish();
+    }
   }
 }
