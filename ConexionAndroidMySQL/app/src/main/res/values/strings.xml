@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">ConexionAndroidMySQL</string>
+    <string name="action_settings">Settings</string>
+    <string name="eMail">Correo Electrónico</string>
+    <string name="pwd">Contraseña</string>
+    <string name="logIn">Iniciar Sesión</string>
+    <string name="btn_signUp">Registrarse</string>
+    <string name="title_activity_registrar_cuenta">Registrar Nueva Cuenta</string>
+    <string name="firstName">Nombre</string>
+    <string name="lastName">Apellidos</string>
+    <string name="userName">Nombre de Usuario</string>
+    <string name="promptPwdAgain">Escriba de nuevo su contraseña</string>
+    <string name="btn_submitSignUp">Registrar nueva cuenta</string>
+    <string name="title_activity_perfil_usuario">Perfil del Usuario</string>
+
+    <string name="profile_sampleUserName">Aquí va el nombre de usuario</string>
+    <string name="profile_sampleFirstName">Aquí va el nombre de pila del usuario</string>
+    <string name="profile_sampleLastName">Aquí va el/los apellido(s) del usuario</string>
+    <string name="profile_sampleEMail">Aquí va el correo electrónico del usuario</string>
+    <string name="profile_labelUserName">Nombre de Usuario:</string>
+    <string name="profile_labelFirstName">Nombre:</string>
+    <string name="profile_labelLastName">Apellidos:</string>
+    <string name="profile_labelEMail">Correo Electrónico:</string>
+
+    <string name="error_firstNameEmpty">Debe escribir su nombre de pila</string>
+    <string name="error_lastNameEmpty">Debe escribir sus apellidos</string>
+    <string name="error_userNameEmpty">Debe escribir un nombre de usuario</string>
+    <string name="error_eMailEmpty">Debe escribir su correo electrónico</string>
+    <string name="error_pwdEmpty">Debe escribir una contraseña</string>
+    <string name="error_pwdAgainEmpty">Debe confirmar su contraseña</string>
+    <string name="error_pwdsMismatch">Las contraseñas ingresadas no coinciden</string>
+
+    <string name="error_loginEmail">El correo ingresado no se encuentra registrado</string>
+    <string name="error_loginPwd">La contraseña ingresada no es válida</string>
+
+    <string name="success_signUp">El nuevo perfil ha sido registrado exitosamente</string>
+    <string name="success_logIn">Se ha iniciado sesión exitosamente</string>
+</resources>
