@@ -1,15 +1,12 @@
 package cr.tec.desarrollomovil.conexionandroidmysql.Classes;
 
-import android.widget.Toast;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.concurrent.ExecutionException;
-
-import cr.tec.desarrollomovil.conexionandroidmysql.RegistrarCuenta;
 
 /**
  * Created by Farcem on 16-Apr-16.

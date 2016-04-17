@@ -22,6 +22,8 @@ public class PerfilUsuario extends AppCompatActivity {
 
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+    setContentView(R.layout.activity_perfil_usuario);
+
     firstName = (TextView)findViewById(R.id.profile_firstName);
     lastName = (TextView)findViewById(R.id.profile_lastName);
     userName = (TextView)findViewById(R.id.profile_userName);
@@ -39,9 +41,11 @@ public class PerfilUsuario extends AppCompatActivity {
       {
         return;
       }
+
       else
       {
         firstName.setText(extras.getString("myFirstName"));
+
         lastName.setText(extras.getString("myLastName"));
         userName.setText(extras.getString("myUserName"));
         eMail.setText(extras.getString("myEmail"));
