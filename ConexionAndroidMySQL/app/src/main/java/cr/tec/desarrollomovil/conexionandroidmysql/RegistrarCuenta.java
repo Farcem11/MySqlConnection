@@ -1,17 +1,18 @@
 package cr.tec.desarrollomovil.conexionandroidmysql;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-public class RegistrarCuenta extends AppCompatActivity {
+import cr.tec.desarrollomovil.conexionandroidmysql.Classes.Database;
 
-
+public class RegistrarCuenta extends AppCompatActivity
+{
   // Variables para los campos de texto del layout
   EditText firstName;
   EditText lastName;
@@ -19,15 +20,18 @@ public class RegistrarCuenta extends AppCompatActivity {
   EditText eMail;
   EditText pwd;
   EditText pwdAgain;
-
+  public static Context context;
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
+  protected void onCreate(Bundle savedInstanceState)
+  {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_registrar_cuenta);
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+    context = this;
 
     // Asigna los TextView
     firstName = (EditText) findViewById(R.id.signUp_firstName);
@@ -76,16 +80,20 @@ public class RegistrarCuenta extends AppCompatActivity {
       Toast.makeText(this, R.string.error_pwdsMismatch, Toast.LENGTH_LONG).show();
       return;
     }
-    else{
-      // TODO Enviar datos a BD
-
-      // Toast notificando que la cuenta fue creada exitosamente
-      Toast.makeText(this, R.string.success_signUp, Toast.LENGTH_LONG).show();
-
-      // Finalizar esta Activity
-      Intent intent = new Intent(this, MainActivity.class);
-      startActivity(intent);
-      this.finish();
+    else
+    {
+      int inserted = Database.registerUser(str_firstName,str_lastName,str_eMail,str_pwd,str_userName);
+      if (inserted == 1)
+      {
+        Toast.makeText(this, "El usuario ha sido registrado en la base de datos", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        this.finish();
+      }
+      else
+      {
+        Toast.makeText(this, "Ese correo ya esta siendo usado por otro usuario", Toast.LENGTH_LONG).show();
+      }
     }
   }
 }

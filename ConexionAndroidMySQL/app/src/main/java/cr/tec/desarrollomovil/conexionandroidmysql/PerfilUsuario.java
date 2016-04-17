@@ -1,11 +1,8 @@
 package cr.tec.desarrollomovil.conexionandroidmysql;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.TextView;
 
 public class PerfilUsuario extends AppCompatActivity {
@@ -16,8 +13,14 @@ public class PerfilUsuario extends AppCompatActivity {
   TextView eMail;
 
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
+  protected void onCreate(Bundle savedInstanceState)
+  {
     super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_perfil_usuario);
+    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
+
+    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     firstName = (TextView)findViewById(R.id.profile_firstName);
     lastName = (TextView)findViewById(R.id.profile_lastName);
@@ -25,29 +28,27 @@ public class PerfilUsuario extends AppCompatActivity {
     eMail = (TextView) findViewById(R.id.profile_eMail);
 
     showProfileInfo(savedInstanceState);
-
-    setContentView(R.layout.activity_perfil_usuario);
-    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-    setSupportActionBar(toolbar);
-
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
   }
 
   private void showProfileInfo(Bundle savedInstance){
-    if (savedInstance == null){
+    if (savedInstance == null)
+    {
       Bundle extras = getIntent().getExtras();
 
-      if (extras == null){
+      if (extras == null)
+      {
         return;
       }
-      else{
+      else
+      {
         firstName.setText(extras.getString("myFirstName"));
         lastName.setText(extras.getString("myLastName"));
         userName.setText(extras.getString("myUserName"));
         eMail.setText(extras.getString("myEmail"));
       }
     }
-    else{
+    else
+    {
       firstName.setText((String) savedInstance.getSerializable("myFirstName"));
       lastName.setText((String) savedInstance.getSerializable("myLastName"));
       userName.setText((String) savedInstance.getSerializable("myUserName"));
@@ -57,7 +58,8 @@ public class PerfilUsuario extends AppCompatActivity {
   }
 
   @Override
-  public void onBackPressed(){
+  public void onBackPressed()
+  {
     super.onBackPressed();
     finish();
   }

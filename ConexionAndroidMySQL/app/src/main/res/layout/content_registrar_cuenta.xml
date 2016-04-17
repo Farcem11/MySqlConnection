@@ -40,7 +40,7 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/signUp_lastName"
-            android:hint="@string/lastName"/>
+            android:hint="Apellido"/>
 
     <Space
             android:layout_width="match_parent"
