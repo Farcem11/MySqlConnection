@@ -1,10 +1,12 @@
 package cr.tec.desarrollomovil.conexionandroidmysql;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -19,6 +21,8 @@ public class PerfilUsuario extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
+    setContentView(R.layout.activity_perfil_usuario);
+
     firstName = (TextView)findViewById(R.id.profile_firstName);
     lastName = (TextView)findViewById(R.id.profile_lastName);
     userName = (TextView)findViewById(R.id.profile_userName);
@@ -26,7 +30,6 @@ public class PerfilUsuario extends AppCompatActivity {
 
     showProfileInfo(savedInstanceState);
 
-    setContentView(R.layout.activity_perfil_usuario);
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
@@ -35,13 +38,18 @@ public class PerfilUsuario extends AppCompatActivity {
 
   private void showProfileInfo(Bundle savedInstance){
     if (savedInstance == null){
-      Bundle extras = getIntent().getExtras();
+      final Bundle extras = this.getIntent().getExtras();
 
       if (extras == null){
         return;
       }
       else{
-        firstName.setText(extras.getString("myFirstName"));
+        if(extras.getString("myFirstName") != null){
+          firstName.setText(extras.getString("myFirstName"));
+        }
+        else{
+          Log.e("ERROR", "extra");
+        }
         lastName.setText(extras.getString("myLastName"));
         userName.setText(extras.getString("myUserName"));
         eMail.setText(extras.getString("myEmail"));

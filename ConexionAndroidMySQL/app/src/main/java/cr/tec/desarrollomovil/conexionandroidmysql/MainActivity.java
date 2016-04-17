@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
    *
    * @param view
    */
-  private void logIn(View view){
+  public void logIn(View view){
     String str_eMail = login_eMail.getText().toString();
     String str_pwd = login_pwd.getText().toString();
 
@@ -60,19 +60,18 @@ public class MainActivity extends AppCompatActivity {
       return;
     }
 
-    if (!str_eMail.equals("holaMundo")) {
+    if (!str_pwd.equals("holaMundo")) {
       Toast.makeText(this, R.string.error_loginInvalidPwd, Toast.LENGTH_LONG).show();
       return;
-    }
-
-    // La información de perfil obtenida se pasa al Intent
-    else {
+    } else {
       String obtainedFirstName = "Mi primer nombre";
       String obtainedLastName = "Mi segundo nombre";
       String obtainedUserName = "Mi nombre de usuario";
       String obtainedEmail = "root@example.com";
 
       Intent intent = new Intent(this, PerfilUsuario.class);
+
+      // La información de perfil obtenida se pasa al Intent
       intent.putExtra("myFirstName", obtainedFirstName);
       intent.putExtra("myLastName", obtainedLastName);
       intent.putExtra("myUserName", obtainedUserName);
