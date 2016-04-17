@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
           }
           else
           {
-              Toast.makeText(this, "El correo no se encuetra registrado en la base de datos o la contraseña es incorrecta", Toast.LENGTH_LONG).show();
+              Toast.makeText(this, "El correo no se encuentra registrado en la base de datos o la contraseña es incorrecta", Toast.LENGTH_LONG).show();
           }
       }
   }

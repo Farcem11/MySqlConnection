@@ -92,7 +92,7 @@ public class RegistrarCuenta extends AppCompatActivity
       }
       else
       {
-        Toast.makeText(this, "Ese correo ya esta siendo usado por otro usuario", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Ese correo ya está siendo usado por otro usuario", Toast.LENGTH_LONG).show();
       }
     }
   }
